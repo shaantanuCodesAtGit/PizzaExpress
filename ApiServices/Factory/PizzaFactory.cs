@@ -8,6 +8,9 @@ using Utility.Constant;
 
 namespace Business.Factory
 {
+    /// <summary>
+    /// Returns a pizza of choice.
+    /// </summary>
     public class PizzaFactory
     {
         private readonly DataContext _dataContext;

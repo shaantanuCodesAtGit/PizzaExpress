@@ -7,6 +7,9 @@ using Utility.Enum;
 
 namespace Business.Services
 {
+    /// <summary>
+    /// Simple base service which provides base of pizza
+    /// </summary>
     public class BasePizzaService : IPizza
     {
         private readonly PizzaSizeEnum _size;

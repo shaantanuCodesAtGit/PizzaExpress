@@ -10,6 +10,12 @@ using Microsoft.AspNetCore.Http;
 
 namespace ClientServer.Middleware
 {
+    /// <summary>
+    /// Middleware which is just a reverse proxy where it sends forwards the request to api server
+    /// and then responds back to ui with api response.
+    /// this can be also used to trim headers and send only necessary headers
+    /// append token to request etc.
+    /// </summary>
     public class ReverseProxyMiddleware
     {
         private readonly RequestDelegate _next;
@@ -36,6 +42,12 @@ namespace ClientServer.Middleware
             return;
         }
 
+        /// <summary>
+        /// send request to api server and copy the response from api server and send back to client
+        /// </summary>
+        /// <param name="context"></param>
+        /// <param name="requestMessage"></param>
+        /// <returns></returns>
         private async Task SendAsync(HttpContext context, HttpRequestMessage requestMessage)
         {
             using (var responseMessage = await _httpClient.SendAsync(requestMessage, HttpCompletionOption.ResponseHeadersRead, context.RequestAborted))

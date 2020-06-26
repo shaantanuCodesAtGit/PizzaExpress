@@ -8,6 +8,10 @@ using Newtonsoft.Json;
 
 namespace Data.Respository
 {
+    /// <summary>
+    /// Provides a way to access file system
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class Respository<T> : IRepository<T> where T : class
     {
         private readonly string _connection;

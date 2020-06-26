@@ -12,6 +12,9 @@ using Cheese = Data.Entity.Cheese;
 
 namespace Business.ServiceBase
 {
+    /// <summary>
+    /// Base class which provides implementation to assemble pizza.
+    /// </summary>
     public abstract class PizzaServiceBase : IPizza
     {
         public string Name { get; set; }
