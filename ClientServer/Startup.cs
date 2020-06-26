@@ -28,6 +28,7 @@ namespace ClientServer
                 configuration.RootPath = "ClientApp/dist";
             });
 
+            // register additional services here
             services.RegisterServices(Configuration);
         }
 
