@@ -1,0 +1,21 @@
+.example-card {
+  max-width: 400px;
+}
+
+.image {
+  max-height: 400px;
+}
+
+.example-h2 {
+  margin: 10px;
+}
+
+.example-section {
+  align-content: center;
+  align-items: center;
+  height: 60px;
+}
+
+.example-margin {
+  margin: 0 10px;
+}

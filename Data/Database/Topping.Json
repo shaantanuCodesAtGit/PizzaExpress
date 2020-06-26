@@ -1,0 +1,44 @@
+﻿[
+  {
+    "Name": "Sausage",
+    "Description": "With caramelized onions",
+    "Price": "1",
+    "IsVeg": 0
+  },
+  {
+    "Name": "Chicken",
+    "Description": "With caramelized onions",
+    "Price": "1",
+    "IsVeg": 0
+  },
+  {
+    "Name": "Tuna fish",
+    "Description": "Adds that extra flavour",
+    "Price": "1",
+    "IsVeg": 0
+  },
+  {
+    "Name": "Pesto with white beans",
+    "Description": "Perfect beans",
+    "Price": "1",
+    "IsVeg": 1
+  },
+  {
+    "Name": "Baby Spinach",
+    "Description": "Healthy",
+    "Price": "1",
+    "IsVeg": 1
+  },
+  {
+    "Name": "Jalapeño",
+    "Description": "Tangy",
+    "Price": "1",
+    "IsVeg": 1
+  },
+  {
+    "Name": "Mushrooms",
+    "Description": "Tangy",
+    "Price": "1",
+    "IsVeg": 1
+  }
+]

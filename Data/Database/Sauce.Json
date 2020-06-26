@@ -1,0 +1,26 @@
+﻿[{
+    "Name" :"Ranch Sauce",
+    "Description":"We all know ranch tastes good on everything",
+    "Price":"1"
+  },
+  {
+    "Name": "Garlic Sauce",
+    "Description": "For the more traditional pizza lover, garlic sauce is a must-have",
+    "Price": "1"
+  },
+  {
+    "Name" :"Marinara Sauce",
+    "Description":"Tangy sauce with twist",
+    "Price":"1"
+  },
+  {
+    "Name" :"BBQ Sauce",
+    "Description":"Smoky",
+    "Price":"1"
+  },
+  {
+    "Name" :"Hot Sauce",
+    "Description":"Spice it up",
+    "Price":"1"
+  }
+]

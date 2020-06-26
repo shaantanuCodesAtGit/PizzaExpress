@@ -1,0 +1,12 @@
+<mat-card class="example-card" [routerLink]="['/pizza/select',pizza.name]">
+  <mat-card-header>
+    <mat-card-title><h4>{{pizza.name}} ({{pizza.isVeg?'Veg':'Non-Veg'}})</h4></mat-card-title>
+    <mat-card-subtitle>{{pizza.description}}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image class="image" [src]="pizza.image" alt="Pizza">
+  <mat-card-content>
+    <p>
+      Total pizza price : {{pizza.totalPrice}}
+    </p>
+  </mat-card-content>
+</mat-card>

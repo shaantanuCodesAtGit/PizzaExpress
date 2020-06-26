@@ -10,6 +10,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using PizzaOrderingApiServer.Extention;
+using PizzaOrderingApiServer.Middleware;
 
 namespace PizzaOrderingApiServer
 {
@@ -25,6 +27,8 @@ namespace PizzaOrderingApiServer
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.RegisterServices(Configuration);
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
@@ -39,6 +43,8 @@ namespace PizzaOrderingApiServer
             {
                 app.UseHsts();
             }
+
+            app.UseHttpErrorHandler();
 
             app.UseHttpsRedirection();
             app.UseMvc();

@@ -1,0 +1,87 @@
+<mat-grid-list cols="4" rowHeight="100px">
+  <mat-grid-tile [colspan]="3"
+                 [rowspan]="8">
+    <mat-card class="pizza-card">
+      <mat-card-header>
+        <mat-card-title>{{pizza.name}}</mat-card-title>
+      </mat-card-header>
+      <img mat-card-image class="image" [src]="pizza.image" alt="Pizza">
+      <mat-card-content>
+        <p>
+          Total pizza price : {{pizza.totalPrice}}
+        </p>
+
+        <p>
+          {{pizza.isVeg ? 'Veg' : 'Non-Veg'}}
+        </p>
+
+        <mat-list>
+          <h4>Topping</h4>
+          <mat-list-item class="selected-list" *ngFor="let item of pizza.toppings"> {{item.name}} </mat-list-item>
+        </mat-list>
+        <mat-list>
+          <h4>Sauce</h4>
+          <mat-list-item class="selected-list" *ngFor="let item of pizza.sauces"> {{item.name}} </mat-list-item>
+        </mat-list>
+        <mat-list>
+          <h4>Cheese</h4>
+          <mat-list-item class="selected-list" *ngFor="let item of pizza.cheeses"> {{item.name}} </mat-list-item>
+        </mat-list>
+
+      </mat-card-content>
+      <mat-card-actions>
+
+        <button mat-raised-button (click)="confirm()">Place order</button>
+
+      </mat-card-actions>
+    </mat-card>
+
+  </mat-grid-tile>
+  <mat-grid-tile [colspan]="1"
+                 [rowspan]="10">
+
+
+    <mat-accordion>
+      <!--Topping-->
+      <mat-list>
+        <h3>Topping</h3>
+        <mat-selection-list #toppings>
+          <mat-list-option *ngFor="let item of ingredients.toppings" [selected]="item.isSelected" (selectionChange)="updateTopping($event,item)">
+            {{item.name}}
+            <i class="ingredient-description">{{item.description}}</i>
+          </mat-list-option>
+        </mat-selection-list>
+      </mat-list>
+
+      <mat-divider></mat-divider>
+
+      <!--Sauce-->
+      <mat-list>
+        <h3>Suace</h3>
+        <mat-selection-list #sauces>
+          <mat-list-option *ngFor="let item of ingredients.sauces" [selected]="item.isSelected" (selectionChange)="updateSauce($event,item)">
+            {{item.name}}
+            <i class="ingredient-description">{{item.description}}</i>
+          </mat-list-option>
+        </mat-selection-list>
+      </mat-list>
+
+      <mat-divider></mat-divider>
+
+      <!--Cheese-->
+      <mat-list>
+        <h3>Cheese</h3>
+        <mat-selection-list #cheeses>
+          <mat-list-option *ngFor="let item of ingredients.cheeses" [selected]="item.isSelected" (selectionChange)="updateCheese($event,item)">
+            {{item.name}}
+            <i class="ingredient-description">{{item.description}}</i>
+          </mat-list-option>
+        </mat-selection-list>
+      </mat-list>
+
+
+
+    </mat-accordion>
+  </mat-grid-tile>
+
+</mat-grid-list>

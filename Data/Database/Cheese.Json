@@ -1,0 +1,22 @@
+﻿[
+  {
+    "Name": "Mozzarella",
+    "Description": "Melts instanly",
+    "Price": "1"
+  },
+  {
+    "Name": "Feta",
+    "Description": "For your taste buds",
+    "Price": "2"
+  },
+  {
+    "Name": "Cheddar",
+    "Description": "Yumm",
+    "Price": "2"
+  },
+  {
+    "Name": "Parmesan",
+    "Description": "Very cheesy",
+    "Price": "1"
+  }
+]
