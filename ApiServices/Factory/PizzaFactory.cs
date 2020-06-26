@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Business.PizzaInterface;
 using Business.Services;
 using Data.Respository;
 using Utility.Constant;
@@ -15,7 +16,7 @@ namespace Business.Factory
         {
             _dataContext = dataContext;
         }
-        public PizzaService ChoosenPizza(string pizzaType)
+        public IPizza ChoosenPizza(string pizzaType)
         {
             switch (pizzaType)
             {

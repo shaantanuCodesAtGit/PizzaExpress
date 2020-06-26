@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Business.Decorator;
+using Business.PizzaInterface;
 using Business.Services;
 using Utility.Enum;
 using Utility.Helper;
@@ -11,7 +12,7 @@ using Cheese = Data.Entity.Cheese;
 
 namespace Business.ServiceBase
 {
-    public abstract class PizzaServiceBase
+    public abstract class PizzaServiceBase : IPizza
     {
         public string Name { get; set; }
 
@@ -46,5 +47,7 @@ namespace Business.ServiceBase
 
             return bakedPizza;
         }
+
+        public abstract Pizza GetPizza();
     }
 }

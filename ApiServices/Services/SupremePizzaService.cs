@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using Business.Decorator;
+using Business.ServiceBase;
 using Data.Entity;
 using Data.Respository;
 using DomainResource.Resource;
@@ -10,7 +11,7 @@ using Utility.Constant;
 
 namespace Business.Services
 {
-    public class SupremePizzaService : PizzaService
+    public class SupremePizzaService : PizzaServiceBase
     {
         private readonly DataContext _dataContext;
 

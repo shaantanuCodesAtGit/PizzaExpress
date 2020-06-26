@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Business.Decorator;
 using Business.PizzaInterface;
+using Business.ServiceBase;
 using Data.Entity;
 using Data.Respository;
 using DomainResource.Resource;
@@ -11,7 +12,7 @@ using Utility.Constant;
 
 namespace Business.Services
 {
-    public class ChickenPizzaService : PizzaService
+    public class ChickenPizzaService : PizzaServiceBase
     {
         private readonly DataContext _dataContext;
 

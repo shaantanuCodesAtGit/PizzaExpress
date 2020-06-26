@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Business.ServiceBase;
 using Data.Entity;
 using Utility.Constant;
 
 namespace Business.Services
 {
-    public class CustomPizzaService : PizzaService
+    public class CustomPizzaService : PizzaServiceBase
     {
         public override Pizza GetPizza()
         {

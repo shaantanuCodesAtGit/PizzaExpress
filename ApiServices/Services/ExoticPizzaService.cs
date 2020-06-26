@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using Business.Decorator;
 using Business.PizzaInterface;
+using Business.ServiceBase;
 using Data.Entity;
 using Data.Respository;
 using DomainResource.Resource;
@@ -14,7 +15,7 @@ using Utility.Helper;
 
 namespace Business.Services
 {
-    public class ExoticPizzaService : PizzaService
+    public class ExoticPizzaService : PizzaServiceBase
     {
         private readonly DataContext _dataContext;
 
