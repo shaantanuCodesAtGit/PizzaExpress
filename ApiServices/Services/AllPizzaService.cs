@@ -32,9 +32,11 @@ namespace Business.Services
         public PizzaDto GetPizza(string name)
         {
             var pizzaFactory = new PizzaFactory(_dataContext);
-            var pizza = pizzaFactory.ChoosenPizza(name).GetPizza();
+            var pizzaService = pizzaFactory.ChoosenPizza(name);
 
-            return pizza == null ? null : TinyMapper.Map<PizzaDto>(pizza);
+            return pizzaService == null 
+                    ? null 
+                    : TinyMapper.Map<PizzaDto>(pizzaService.GetPizza());
         }
     }
 }

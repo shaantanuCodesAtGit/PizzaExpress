@@ -25,17 +25,21 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\app\http\auth-interceptor.ts" />
     <None Remove="ClientApp\src\app\model\ingredient.ts" />
     <None Remove="ClientApp\src\app\model\IPizza.ts" />
     <None Remove="ClientApp\src\app\service\ingredient.service.ts" />
     <None Remove="ClientApp\src\app\service\pizza.service.ts" />
+    <None Remove="ClientApp\src\toast\toast.module.ts" />
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\http\auth-interceptor.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\model\ingredient.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\model\IPizza.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\service\pizza.service.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\service\ingredient.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\toast\toast.module.ts" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

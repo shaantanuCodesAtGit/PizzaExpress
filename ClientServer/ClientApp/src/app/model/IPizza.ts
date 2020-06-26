@@ -18,3 +18,8 @@ export enum PizzaSize {
   Medium = 2,
   Large = 3,
 }
+
+export interface IOrder {
+  id: number;
+  pizza: IPizza;
+}

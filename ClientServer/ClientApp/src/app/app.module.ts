@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -12,6 +12,7 @@ import { MatExpansionModule } from "@angular/material/expansion";
 import { MatButtonToggleModule } from "@angular/material/button-toggle";
 import { MatGridListModule } from "@angular/material/grid-list";
 
+import { ToastrModule, ToastContainerModule, ToastrService } from 'ngx-toastr';
 
 import { PizzaModule } from "../app-pizza/pizza.module";
 
@@ -29,6 +30,7 @@ import { PizzaCardComponent } from './pizza/pizzaList/pizzaCard/pizzaCard.compon
 
 import { PizzaService } from './service/pizza.service';
 import { IngredientService } from './service/ingredient.service';
+import { AuthInterceptor } from "./http/auth-interceptor";
 
 
 @NgModule({
@@ -41,7 +43,7 @@ import { IngredientService } from './service/ingredient.service';
 
     PizzaComponent,
     PizzaListComponent,
-    PizzaCardComponent,
+    PizzaCardComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -62,10 +64,21 @@ import { IngredientService } from './service/ingredient.service';
     MatCardModule,
     MatExpansionModule,
     MatButtonToggleModule,
-    MatGridListModule
+    MatGridListModule,
 
+    ToastrModule.forRoot({
+      timeOut: 3000,
+      positionClass: 'toast-bottom-center',
+      preventDuplicates: true
+    }),
+    ToastContainerModule
   ],
-  providers: [PizzaService, IngredientService],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true,
+    deps: [ToastrService]
+  }, PizzaService, IngredientService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

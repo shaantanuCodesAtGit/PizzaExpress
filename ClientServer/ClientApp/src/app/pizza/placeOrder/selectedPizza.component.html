@@ -1,6 +1,6 @@
 <mat-grid-list cols="4" rowHeight="100px">
   <mat-grid-tile [colspan]="3"
-                 [rowspan]="8">
+                 [rowspan]="10">
     <mat-card class="pizza-card">
       <mat-card-header>
         <mat-card-title>{{pizza.name}}</mat-card-title>
@@ -8,7 +8,7 @@
       <img mat-card-image class="image" [src]="pizza.image" alt="Pizza">
       <mat-card-content>
         <p>
-          Total pizza price : {{pizza.totalPrice}}
+          Total pizza price : ${{pizza.totalPrice}}
         </p>
 
         <p>
@@ -47,7 +47,7 @@
         <h3>Topping</h3>
         <mat-selection-list #toppings>
           <mat-list-option *ngFor="let item of ingredients.toppings" [selected]="item.isSelected" (selectionChange)="updateTopping($event,item)">
-            {{item.name}}
+            {{item.name}} (${{item.price}})
             <i class="ingredient-description">{{item.description}}</i>
           </mat-list-option>
         </mat-selection-list>
@@ -60,7 +60,7 @@
         <h3>Suace</h3>
         <mat-selection-list #sauces>
           <mat-list-option *ngFor="let item of ingredients.sauces" [selected]="item.isSelected" (selectionChange)="updateSauce($event,item)">
-            {{item.name}}
+            {{item.name}} (${{item.price}})
             <i class="ingredient-description">{{item.description}}</i>
           </mat-list-option>
         </mat-selection-list>
@@ -73,7 +73,7 @@
         <h3>Cheese</h3>
         <mat-selection-list #cheeses>
           <mat-list-option *ngFor="let item of ingredients.cheeses" [selected]="item.isSelected" (selectionChange)="updateCheese($event,item)">
-            {{item.name}}
+            {{item.name}} (${{item.price}})
             <i class="ingredient-description">{{item.description}}</i>
           </mat-list-option>
         </mat-selection-list>

@@ -45,7 +45,7 @@ namespace PizzaOrderingApiServer.Controllers
             // just in case we need to do logging that's why throwing error.
             if (pizza == null)
             {
-                throw new HttpStatusCodeException(HttpStatusCode.NotFound, "");
+                throw new HttpStatusCodeException(HttpStatusCode.NotFound, "Pizza you are looking for is unavailable");
             }
 
             return Ok(pizza);

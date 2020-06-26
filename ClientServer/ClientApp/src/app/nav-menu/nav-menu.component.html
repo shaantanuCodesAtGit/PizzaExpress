@@ -14,7 +14,12 @@
       <ul class='nav navbar-nav'>
         <li [routerLinkActive]='["link-active"]'>
           <a [routerLink]='["/pizza"]' (click)='collapse()'>
-            <span class='glyphicon glyphicon-th-list'></span> Fetch pizza
+            <span class='glyphicon glyphicon-th-list'></span> Choose from our offerings
+          </a>
+        </li>
+        <li [routerLinkActive]='["link-active"]'>
+          <a [routerLink]='["/pizza/select","Custom"]' (click)='collapse()'>
+            <span class='glyphicon glyphicon-th-list'></span> Build your own pizza
           </a>
         </li>
       </ul>

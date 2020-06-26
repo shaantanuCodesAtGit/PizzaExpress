@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
@@ -14,11 +14,12 @@ import { MatButtonToggleModule } from "@angular/material/button-toggle";
 import { MatGridListModule } from "@angular/material/grid-list";
 import { MatListModule } from "@angular/material/list";
 
-
+import { ToastrModule, ToastContainerModule, ToastrService } from 'ngx-toastr';
 
 import { PizzaService } from '../app/service/pizza.service';
 import { IngredientService } from '../app/service/ingredient.service';
 import { SelectedPizzaComponent } from "../app/pizza/placeOrder/selectedPizza.component"
+import { AuthInterceptor } from "../app/http/auth-interceptor";
 
 
 @NgModule({
@@ -39,9 +40,14 @@ import { SelectedPizzaComponent } from "../app/pizza/placeOrder/selectedPizza.co
     MatExpansionModule,
     MatButtonToggleModule,
     MatGridListModule,
-    MatListModule
+    MatListModule,
 
   ],
-  providers: [PizzaService, IngredientService]
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true,
+    deps: [ToastrService]
+  },PizzaService, IngredientService]
 })
 export class PizzaModule { }
